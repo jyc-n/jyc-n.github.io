@@ -7,7 +7,7 @@ subtitle: Ph.D. Student in Mechanical Engineering @ UCLA
 profile:
   align: right
   image: 
-  address: >
+  address:
 
 news: true  # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
