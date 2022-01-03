@@ -1,7 +1,7 @@
 ---
 layout: post
-date: 2015-10-22 15:59:00-0400
+date: 2021-12-22
 inline: true
 ---
 
-A simple inline announcement.
+I gave a talk about our SIGGRAPH 2021 paper at the [GAMES Webinar](https://www.bilibili.com/video/BV1Aq4y1m7ZC) (in Chinese).
