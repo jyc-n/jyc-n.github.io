@@ -7,6 +7,9 @@ nav: true
 nav_order: 5
 ---
 
+###### **LS-30A: Mathematics for Life Scientists**
+Fall 2022, UCLA
+
 
 ###### **LS-30B: Mathematics for Life Scientists**
 Winter 2022, UCLA

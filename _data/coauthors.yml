@@ -3,9 +3,13 @@
     url: https://www.math.ucla.edu/~jteran/
 
 "Hyde":
-  - firstname: ["David A. B."]
+  - firstname: ["David A. B.", "David"]
     url: https://dabh.io
 
 "Kala":
   - firstname: ["Victoria"]
     url: https://victoriakala.com
+
+"Akar":
+  - firstname: ["Osman"]
+    url: https://www.math.ucla.edu/~oak/

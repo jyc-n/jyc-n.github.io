@@ -72,12 +72,12 @@
               {%- else -%}
                 {%- if author_array_limit == author_array_size %} and {% endif %}
                 {% if author_is_self -%}
-                  <em>{{author.last}}, {{author.first}}</em>
+                  <em>{{author.first}} {{author.last}}</em>
                 {% else -%}
                   {%- if coauthor_url -%}
-                    <a href="{{coauthor_url}}">{{author.last}}, {{author.first}}</a>
+                    <a href="{{coauthor_url}}">{{author.first}}, {{author.last}}</a>
                   {% else -%}
-                    {{author.last}}, {{author.first}}
+                    {{author.first}} {{author.last}}
                   {%- endif -%}
                 {%- endif -%}
               {%- endunless -%}

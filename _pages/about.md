@@ -22,6 +22,6 @@ I am a Ph.D. student in mechanical engineering at **UCLA** advised by Prof. **[J
 
 My research interests are in physics-based animations in computer graphics and computational mechanics, including various simulations of deformable solids, fluids, and thermomechanical effects.
 
-Outside of school, I did an internship at **[X](https://x.company)** in 2021, where I worked on implementing a new model in **[Bullet](https://pybullet.org/wordpress/)** to accelerate the deformable object simulations.
+Outside of school, I interned at **Amazon** in 2022, where I worked on cloth simulations and differentiable physics engine. Earlier in 2021, I did an internship at **[X](https://x.company)**, where I worked on implementing a new model in **[Bullet](https://pybullet.org/wordpress/)** to accelerate the deformable object simulations.
 
 ---
