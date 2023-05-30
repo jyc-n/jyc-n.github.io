@@ -32,6 +32,10 @@ highlight_theme_dark: native    # https://github.com/jwarby/jekyll-pygments-them
 # repo color theme
 repo_theme_light: default       # https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 repo_theme_dark: dark           # https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
+repo_trophies:
+  enabled: true
+  theme_light: flat    # https://github.com/ryo-ma/github-profile-trophy
+  theme_dark: gitdimmed  # https://github.com/ryo-ma/github-profile-trophy
 
 # -----------------------------------------------------------------------------
 # RSS Feed
@@ -39,7 +43,7 @@ repo_theme_dark: dark           # https://github.com/anuraghazra/github-readme-s
 # will use title and url fields
 # Take a look to https://github.com/jekyll/jekyll-feed for more customization
 
-rss_icon: true
+rss_icon: false
 
 # -----------------------------------------------------------------------------
 # Layout
@@ -68,21 +72,34 @@ og_image: # The site-wide (default for all links) Open Graph preview image
 github_username: jyc-n # your GitHub user name
 gitlab_username: # your GitLab user name
 twitter_username: # your Twitter handle
+mastodon_username: # your mastodon instance+username in the format instance.tld/@username
 linkedin_username: jingyu-chen-9a9986115 # your LinkedIn user name
+telegram_username: # your Telegram user name
 scholar_userid: # your Google Scholar ID
+semanticscholar_id: # your Semantic Scholar ID
+whatsapp_number: # your WhatsApp number (full phone number in international format. Omit any zeroes, brackets, or dashes when adding the phone number in international format.)
 orcid_id: # your ORCID ID
 medium_username: # your Medium username
 quora_username: # your Quora username
 publons_id: # your ID on Publons
+osf_id: # your OSF ID
 research_gate_profile: # your profile on ResearchGate
 blogger_url: # your blogger URL
 work_url: # work page URL
 keybase_username: # your keybase user name
 wikidata_id: # your wikidata id
+wikipedia_id: # your wikipedia id (Case sensitive)
 dblp_url: # your DBLP profile url
-stackoverflow_id: #your stackoverflow id
-
-rss_icon: false
+stackoverflow_id: # your stackoverflow id
+kaggle_id: # your kaggle id
+lastfm_id: # your lastfm id
+spotify_id: # your spotify id
+pinterest_id: # your pinterest id
+unsplash_id: # your unsplash id
+instagram_id: # your instagram id
+facebook_id: # your facebook id
+youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
+discord_id: # your discord id (18-digit unique numerical identifier)
 
 contact_note: >
 
@@ -90,7 +107,7 @@ contact_note: >
 # Analytics and search engine verification
 # -----------------------------------------------------------------------------
 
-google_analytics:  # your google-analytics ID (format: UA-XXXXXXXXX)
+google_analytics:  # your Google Analytics measurement ID (format: G-XXXXXXXXXX)
 panelbear_analytics:  # panelbear analytics site ID (format: XXXXXXXXX)
 
 google_site_verification:  # your google-site-verification ID (Google Search Console)
@@ -109,7 +126,27 @@ bing_site_verification:  # out your bing-site-verification ID (Bing Webmaster)
 pagination:
   enabled: true
 
-# Comments
+related_blog_posts:
+  enabled: true
+  max_related: 5
+
+# Giscus comments (RECOMMENDED)
+# Follow instructions on https://giscus.app/ to setup for your repo to fill out
+# the information below.
+giscus:
+  repo: alshedivat/al-folio      # <your-github-user-name>/<your-github-repo-name>
+  repo_id: MDEwOlJlcG9zaXRvcnk2MDAyNDM2NQ==
+  category: Comments             # name of the category under which discussions will be created
+  category_id: DIC_kwDOA5PmLc4CTBt6
+  mapping: title                 # identify discussions by post title
+  strict: 1                      # use strict identification mode
+  reactions_enabled: 1           # enable (1) or disable (0) emoji reactions
+  input_position: bottom         # whether to display input form below (bottom) or above (top) the comments
+  theme: preferred_color_scheme  # name of the color scheme (preferred works well with al-folio light/dark mode)
+  emit_metadata: 0
+  lang: en
+
+# Disqus comments (DEPRECATED)
 disqus_shortname: al-folio # put your disqus shortname
 # https://help.disqus.com/en/articles/1717111-what-s-a-shortname
 
@@ -177,7 +214,7 @@ plugins:
   - jekyll-paginate-v2
   - jekyll/scholar
   - jekyll-sitemap
-  - jekyll-target-blank
+  - jekyll-link-attributes
   - jekyll-twitter-plugin
   - jemoji
 
@@ -243,11 +280,28 @@ scholar:
 
   query: "@*"
 
-# Filter out certain bibtex entry keywords used internally from the bib output
-filtered_bibtex_keywords: [abbr, abstract, arxiv, bibtex_show, html, pdf, selected, supp, blog, code, poster, slides, website, preview]
+badges: # Display different badges for your pulications
+  altmetric_badge: false # Altmetric badge (https://www.altmetric.com/products/altmetric-badges/)
+  dimensions_badge: false # Dimensions badge (https://badge.dimensions.ai/)
 
-# Maximum number of authors to be shown, other authors will be visible on hover, leave blank to show all authors
-max_author_limit: 10
+# Filter out certain bibtex entry keywords used internally from the bib output
+filtered_bibtex_keywords: [abbr, abstract, arxiv, bibtex_show, html, pdf, selected, supp, blog, code, poster, slides, website, preview, altmetric]
+
+# Maximum number of authors to be shown for each publication (more authors are visible on click)
+max_author_limit:   # leave blank to always show all authors
+more_authors_animation_delay: 10  # more authors are revealed on click using animation; smaller delay means faster animation
+
+
+# -----------------------------------------------------------------------------
+# Jekyll Link Attributes
+# -----------------------------------------------------------------------------
+
+# These are the defaults
+external_links:
+  enabled: true
+  rel: external nofollow noopener
+  target: _blank
+  exclude:
 
 # -----------------------------------------------------------------------------
 # Responsive WebP Images
@@ -296,7 +350,7 @@ enable_navbar_social:       true  # enables displaying social links in the
 enable_project_categories:  true   # enables categorization of projects into
                                    # multiple categories
 enable_medium_zoom:         true   # enables image zoom feature (as on medium.com)
-
+enable_progressbar:         true   # enables a horizontal progress bar linked to the vertical scroll position
 
 # -----------------------------------------------------------------------------
 # Library versions
@@ -327,5 +381,5 @@ mdb:
     css: "sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw="
     js: "sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA="
 medium_zoom:
-  version: "1.0.6"
-  integrity: "sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM="
+  version: "1.0.8"
+  integrity: "sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8="
