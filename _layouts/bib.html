@@ -134,6 +134,12 @@
           {{ entry.note | strip }}
         </div>
 
+        <div style="font-size: 0.8rem;">
+          {%- if entry.more -%}
+            {{entry.more}}
+          {%- endif -%}
+        </div>
+
           <!-- Links/Buttons -->
           <div class="links">
           {%- if entry.abstract %}
@@ -160,6 +166,20 @@
             <a href="{{ entry.supp }}" class="btn btn-sm z-depth-0" role="button">Supp</a>
             {%- else -%}
             <a href="{{ entry.supp | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm z-depth-0" role="button">Supp</a>
+            {%- endif %}
+          {%- endif %}
+          {%- if entry.techdoc %}
+            {% if entry.techdoc contains '://' -%}
+            <a href="{{ entry.techdoc }}" class="btn btn-sm z-depth-0" role="button">Tech Doc</a>
+            {%- else -%}
+            <a href="{{ entry.techdoc | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm z-depth-0" role="button">Tech Doc</a>
+            {%- endif %}
+          {%- endif %}
+          {%- if entry.video %}
+            {% if entry.video contains '://' -%}
+            <a href="{{ entry.video }}" class="btn btn-sm z-depth-0" role="button">Video</a>
+            {%- else -%}
+            <a href="{{ entry.video | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm z-depth-0" role="button">Video</a>
             {%- endif %}
           {%- endif %}
           {%- if entry.blog %}
