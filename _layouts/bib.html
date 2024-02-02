@@ -134,6 +134,12 @@
           {{ entry.note | strip }}
         </div>
 
+        <div style="font-size: 0.8rem; font-weight: bold">
+          {%- if entry.highlight -%}
+            {{entry.highlight}}
+          {%- endif -%}
+        </div>
+
         <div style="font-size: 0.8rem;">
           {%- if entry.more -%}
             {{entry.more}}
