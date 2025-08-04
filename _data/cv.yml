@@ -1,9 +1,13 @@
 - title: Work
   type: time_table
   contents:
-  - title: <b><i>AI Engineer</i></b>
-    institution: NetEase Games
-    year: 01 / 2024 - Present
+  - institution: Tesla Optimus
+    year: 06 /2025 - Present
+    description:
+      - Physics simulations for humanoid robots
+
+  - institution: NetEase Games
+    year: 01 / 2024 - 06 / 2025
     description: 
       - Computer graphics research for video games
 
